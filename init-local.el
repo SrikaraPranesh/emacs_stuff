@@ -2,7 +2,7 @@
 ;;; Commentary: 
 
 (setq inhibit-startup-message t)     ; Don't want any startup message.
-(set-face-attribute 'default nil :height 175) ; Change default font size
+(set-face-attribute 'default nil :height 135) ; Change default font size
 
 ; This part of the code is to automatically download and install packages
 ; from MELPA. I do not understand the code yet. I got it from 
@@ -421,6 +421,14 @@ Version 2016-10-24"
 ;; Turn flyspell on
 (add-hook 'text-mode-hook 'flyspell-mode)
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
+
+;; Customization for python
+;; all the details are from https://realpython.com/emacs-the-best-python-editor/
+(use-package elpy
+  :ensure t
+  :init
+  (elpy-enable))
+
 
 ;; This has to be the last line of this configuration file
 (provide 'init-local)
